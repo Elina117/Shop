@@ -1,0 +1,210 @@
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Shop.project.exe.config
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.Properties.Resources.resources
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.Form1.resources
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Npgsql.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Buffers.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Collections.Immutable.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Memory.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Numerics.Vectors.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Text.Encodings.Web.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Text.Json.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Threading.Channels.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.ValueTuple.dll
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\Npgsql.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Buffers.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Collections.Immutable.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Memory.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Numerics.Vectors.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Text.Encodings.Web.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Text.Json.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Threading.Channels.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\bin\Debug\System.ValueTuple.xml
+\\Mac\Home\Downloads\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.CopyComplete
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Shop.project.exe.config
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Shop.project.exe
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Shop.project.pdb
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Npgsql.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Buffers.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Memory.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Text.Json.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Threading.Channels.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.ValueTuple.dll
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\Npgsql.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Buffers.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Memory.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Text.Json.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Threading.Channels.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\bin\Debug\System.ValueTuple.xml
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.AssemblyReference.cache
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.SuggestedBindingRedirects.cache
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.Form1.resources
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.Properties.Resources.resources
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.GenerateResource.cache
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.CoreCompileInputs.cache
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.csproj.CopyComplete
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.exe
+C:\Users\ilnaz\Source\Repos\Shop.project\Shop.project\obj\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Shop.project.exe.config
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Npgsql.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Buffers.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Collections.Immutable.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Memory.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Numerics.Vectors.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Text.Encodings.Web.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Text.Json.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Threading.Channels.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.ValueTuple.dll
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\Npgsql.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Buffers.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Collections.Immutable.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Memory.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Numerics.Vectors.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Text.Encodings.Web.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Text.Json.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Threading.Channels.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\bin\Debug\System.ValueTuple.xml
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.Form1.resources
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.Properties.Resources.resources
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.csproj.CopyComplete
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project-main\Shop.project\obj\Debug\Shop.project.pdb
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Shop.project.exe.config
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Shop.project.exe
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Shop.project.pdb
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Npgsql.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Buffers.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Memory.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Text.Json.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Threading.Channels.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.ValueTuple.dll
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\Npgsql.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Buffers.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Memory.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Text.Json.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Threading.Channels.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\bin\Debug\System.ValueTuple.xml
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.csproj.AssemblyReference.cache
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.csproj.SuggestedBindingRedirects.cache
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.Form1.resources
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.Properties.Resources.resources
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.csproj.GenerateResource.cache
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.csproj.CoreCompileInputs.cache
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.csproj.CopyComplete
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.exe
+C:\Users\ilnaz\OneDrive\Рабочий стол\project 2\Shop.project\obj\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Shop.project.exe.config
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Shop.project.pdb
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Npgsql.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Buffers.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Collections.Immutable.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Memory.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Numerics.Vectors.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Text.Encodings.Web.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Text.Json.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Threading.Channels.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.ValueTuple.dll
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Bcl.HashCode.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\Npgsql.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Buffers.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Collections.Immutable.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Memory.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Numerics.Vectors.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Text.Encodings.Web.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Text.Json.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Threading.Channels.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.Threading.Tasks.Extensions.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\bin\Debug\System.ValueTuple.xml
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.Form1.resources
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.Properties.Resources.resources
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.csproj.GenerateResource.cache
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.csproj.CopyComplete
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.exe
+\\Mac\Home\Downloads\Shop.project-main-main\Shop.project\obj\Debug\Shop.project.pdb
