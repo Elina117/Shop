@@ -197,7 +197,7 @@
             this.button_prev_send_offer = new System.Windows.Forms.Button();
             this.button_prev_back_to_offer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox_prev_photo = new System.Windows.Forms.PictureBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label_prev_where_buy = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label_prev_name = new System.Windows.Forms.Label();
@@ -237,7 +237,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_prev_photo)).BeginInit();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -2520,7 +2519,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(202)))), ((int)(((byte)(193)))));
-            this.groupBox2.Controls.Add(this.pictureBox_prev_photo);
+            this.groupBox2.Controls.Add(this.webBrowser1);
             this.groupBox2.Controls.Add(this.label_prev_where_buy);
             this.groupBox2.Controls.Add(this.panel6);
             this.groupBox2.Location = new System.Drawing.Point(15, 115);
@@ -2531,14 +2530,16 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
-            // pictureBox_prev_photo
+            // webBrowser1
             // 
-            this.pictureBox_prev_photo.Location = new System.Drawing.Point(9, 41);
-            this.pictureBox_prev_photo.Name = "pictureBox_prev_photo";
-            this.pictureBox_prev_photo.Size = new System.Drawing.Size(178, 182);
-            this.pictureBox_prev_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_prev_photo.TabIndex = 2;
-            this.pictureBox_prev_photo.TabStop = false;
+            this.webBrowser1.Location = new System.Drawing.Point(9, 41);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(174, 173);
+            this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(webBrowser1_DocumentCompleted);
             // 
             // label_prev_where_buy
             // 
@@ -2633,8 +2634,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_prev_photo)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
@@ -2785,7 +2784,6 @@
         private System.Windows.Forms.Label label_prev_name;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ProgressBar pr;
-        private System.Windows.Forms.PictureBox pictureBox_prev_photo;
         private System.Windows.Forms.Label label_set_color;
         private System.Windows.Forms.Label label_set_material;
         private System.Windows.Forms.Label label_set_season;
@@ -2815,6 +2813,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button_set_save_sets;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

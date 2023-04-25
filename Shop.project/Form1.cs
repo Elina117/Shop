@@ -883,7 +883,8 @@ namespace Shop.project
 
         private void button_save_rec_Click(object sender, EventArgs e)
         {
-            pictureBox_prev_photo.LoadAsync(textBox_photo_link.Text.ToString() + ".jpeg");
+            webBrowser1.Url = new Uri(textBox_photo_link.Text);
+            webBrowser1.Document.Body.Style = "zoom:50%";
             label_prev_name.Text = textBox_name_clothe.Text;
             label_prev_where_buy.Text = textBox_discription.Text;
 
@@ -1130,7 +1131,43 @@ namespace Shop.project
             NpgsqlConnection conn = GetConnection();
             NpgsqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = $"UPDATE ";
+            cmd.CommandText = $"UPDATE characteristic SET fk_style_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color}" +
+                $"WHERE characteristic.id = user.fk_characteristic_id";
+
+            cmd.CommandText = $"SELECT EXISTS(SELECT fk_characteristic_id FROM user WHERE id = {user.id})";
+
+            try
+            {
+                conn.Open();
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    string check = dr.GetString(0);
+
+                    if (check.Equals("true"))
+                    {
+                        cmd.CommandText = $"UPDATE characteristic SET fk_style_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color}" +
+                        $"WHERE characteristic.id = user.fk_characteristic_id";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Рекомендации успешно обновлены!");
+                    } else
+                    {
+                        cmd.CommandText = $"INSERT INTO characteristic(fk_style_id, fk_sex_id, fk_season_id, fk_material_id, fk_color_id VALUES({ch_style}, {ch_sex}, {ch_season}, {ch_material}, {ch_color}))";
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Рекомендации успешно обновлены!");
+                    }
+                }
+            } catch(NpgsqlException ex)
+            {
+                MessageBox.Show("Ошибка!\n" + ex);
+            } finally { conn.Close(); }
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser1.Document.Body.Style = "zoom:20%";
         }
     }
    
