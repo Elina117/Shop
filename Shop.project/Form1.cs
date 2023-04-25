@@ -15,6 +15,9 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using System.Threading;
 using Npgsql;
+using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+
 namespace Shop.project
 {
 
@@ -31,6 +34,11 @@ namespace Shop.project
             repeat_new_password.UseSystemPasswordChar = true;
         }
 
+        private List<string> style = new List<string>() { "Класический", "Спортивный", "Домашний", "Рабочий", "Специальный"};
+        private List<string> sex = new List<string>() { "Мужской", "Женсикй", "Унисекс" };
+        private List<string> season = new List<string>() { "Зима", "Осень/Весна", "Лето", "Демисезон"};
+        private List<string> material = new List<string>() { "Хлопок", "Синтетика", "Кожа", "Мех" };
+        private List<string> color = new List<string>() { "Белый", "Черный", "Красный", "Синий", "Зеленый", "Желтый" };
 
         public Form1()
         {
@@ -110,7 +118,7 @@ namespace Shop.project
 
                     conn.Open();
 
-                    cmd.CommandText = $"SELECT EXISTS (SELECT * from registration WHERE user_signin_email = '{textBox_email.Text}')";
+                    cmd.CommandText = $"SELECT EXISTS (SELECT * from user WHERE email = '{textBox_email.Text}')";
                     NpgsqlDataReader dr = cmd.ExecuteReader();
 
                     if (!dr.Read())
@@ -123,7 +131,7 @@ namespace Shop.project
 
                         dr.Close();
 
-                        cmd.CommandText = $"SELECT user_signin_email FROM registration WHERE user_signin_login = '{textBox_reserve_login.Text}'";
+                        cmd.CommandText = $"SELECT email FROM user WHERE login = '{textBox_reserve_login.Text}'";
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
@@ -131,9 +139,9 @@ namespace Shop.project
 
                             string email = dr.GetString(0);
 
-                            user.user_signin_code = reserve_code.Next(1000, 10000);
+                            user.code = reserve_code.Next(1000, 10000);
 
-                            string text = $"<b>Ваш резервный код:<br>{user.user_signin_code}</br>.<br>Если код пришел вам случайно, никому не отправляйте этот код!</br></b>";
+                            string text = $"<b>Ваш резервный код:<br>{user.code}</br>.<br>Если код пришел вам случайно, никому не отправляйте этот код!</br></b>";
                             SendMessage(email, "Восстановление пароля", text);
 
                             MessageBox.Show("Код успешно отправлен на почту, указанную Вами в личном кабинете!\n(Возможно код лежит в папке \"СПАМ\")\nВАЖНО: после того, как вы ввели код, если он правильный, то вы автоматиечски попадёте во вкладку восстановления пароля, никакие другие кнопки нажимать не нужно!");
@@ -198,7 +206,7 @@ namespace Shop.project
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            string code = user.user_signin_code.ToString();
+            string code = user.code.ToString();
 
             if (code.Equals(textBox_enter_reserve_code.Text))
             {
@@ -220,23 +228,34 @@ namespace Shop.project
                 return;
             }
 
+            pr.PerformStep();
+
             NpgsqlConnection conn = GetConnection();
+            pr.PerformStep();
             NpgsqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = $"SELECT user_signin_id FROM registration WHERE user_signin_login = '{textBox_login.Text}' AND user_signin_password = '{textBox_password.Text}'";
+            pr.PerformStep();
+            cmd.CommandText = $"SELECT \"id\" FROM \"user\" WHERE login = '{textBox_login.Text}' AND password = '{textBox_password.Text}'";
+            pr.PerformStep();
             try
             {
+                pr.PerformStep();
                 conn.Open();
+                pr.PerformStep();
 
                 if (conn.State == ConnectionState.Open)
                 {
+                    pr.PerformStep();
                     NpgsqlDataReader dr = cmd.ExecuteReader();
+                    pr.PerformStep();
                     if (dr.Read())
                     {
+                        pr.PerformStep();
                         textBox_login.Text = string.Empty;
                         textBox_password.Text = string.Empty;
-
-                        user.user_signin_id = dr.GetInt32(0);
+                        pr.PerformStep();
+                        user.id = dr.GetInt32(0);
                         PersonalSpace();
+                        pr.Value = 0;
 
                         tabControl1.SelectedIndex = 5;
                     }
@@ -354,7 +373,7 @@ namespace Shop.project
                 if (conn.State == ConnectionState.Open)
                 {
 
-                    cmd.CommandText = $"SELECT EXISTS (SELECT * from registration WHERE user_signin_email = '{textBox_email_in.Text}')";
+                    cmd.CommandText = $"SELECT EXISTS (SELECT * from user WHERE email = '{textBox_email_in.Text}')";
                     reader = cmd.ExecuteReader();
 
                     if (reader.Read() && reader.GetBoolean(0) == true)
@@ -367,7 +386,7 @@ namespace Shop.project
 
 
 
-                    cmd.CommandText = $"SELECT EXISTS(SELECT * from registration WHERE user_signin_login = '{textBox_ligin_in.Text}');";
+                    cmd.CommandText = $"SELECT EXISTS(SELECT * from user WHERE login = '{textBox_ligin_in.Text}');";
                     reader = cmd.ExecuteReader();
 
                     if (reader.Read() && reader.GetBoolean(0) == true)
@@ -379,7 +398,7 @@ namespace Shop.project
 
 
 
-                    cmd.CommandText = $"INSERT INTO registration(user_signin_login, user_signin_password, user_signin_email) values ('{textBox_ligin_in.Text}', '{textBox_password_in.Text}', '{textBox_email_in.Text}')";
+                    cmd.CommandText = $"INSERT INTO user(login, password, email) values ('{textBox_ligin_in.Text}', '{textBox_password_in.Text}', '{textBox_email_in.Text}')";
                     reader = cmd.ExecuteReader();
 
 
@@ -401,9 +420,6 @@ namespace Shop.project
 
 
         }
-
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -648,7 +664,7 @@ namespace Shop.project
 
             NpgsqlConnection conn = GetConnection();
             NpgsqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = $"UPDATE registration SET user_signin_password = '{new_password.Text}' WHERE user_signin_login = '{textBox_reserve_login.Text}'";
+            cmd.CommandText = $"UPDATE user SET password = '{new_password.Text}' WHERE login = '{textBox_reserve_login.Text}'";
 
 
             try
@@ -726,7 +742,7 @@ namespace Shop.project
                 NpgsqlConnection conn = GetConnection();
                 NpgsqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = $"UPDATE registration SET user_lc_name = '{textBox_lc_name.Text}',user_signin_email = '{textBox_lc_email.Text}', user_signin_login = '{textBox_lc_login.Text}', user_lc_birthday = '{textBox_lc_birthday.Text}' WHERE user_signin_id = {user.user_signin_id}";
+                cmd.CommandText = $"UPDATE \"user\" SET \"name\" = '{textBox_lc_name.Text}',email = '{textBox_lc_email.Text}', login = '{textBox_lc_login.Text}', birthday = '{textBox_lc_birthday.Text}' WHERE id = {user.id}";
 
                 label_end_of_changing.Visible = false;
 
@@ -779,7 +795,7 @@ namespace Shop.project
         {
             NpgsqlConnection conn = GetConnection();
             NpgsqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = $"SELECT * FROM registration WHERE user_signin_id = {user.user_signin_id}";
+            cmd.CommandText = $"SELECT * FROM \"user\" WHERE \"id\" = {user.id}";
 
             try
             {
@@ -791,14 +807,14 @@ namespace Shop.project
 
                     if (dr.Read())
                     {
-                        user.user_signin_id = dr.GetInt32(0);
-                        user.user_signin_login = dr.GetString(1);
-                        user.user_signin_password = dr.GetString(2);
-                        user.user_signin_email = dr.GetString(3);
+                        user.id = dr.GetInt32(0);
+                        user.login = dr.GetString(1);
+                        user.password = dr.GetString(2);
+                        user.email = dr.GetString(3);
 
-                        textBox_lc_name .Text = user.user_lc_name;
-                        textBox_lc_email.Text = user.user_signin_email;
-                        textBox_lc_login.Text = user.user_signin_login;
+                        textBox_lc_name .Text = user.name;
+                        textBox_lc_email.Text = user.email;
+                        textBox_lc_login.Text = user.login;
 
                         dr.Close();
                     }
@@ -867,12 +883,254 @@ namespace Shop.project
 
         private void button_save_rec_Click(object sender, EventArgs e)
         {
+            pictureBox_prev_photo.LoadAsync(textBox_photo_link.Text.ToString() + ".jpeg");
+            label_prev_name.Text = textBox_name_clothe.Text;
+            label_prev_where_buy.Text = textBox_discription.Text;
+
+            //var request = WebRequest.Create(textBox_photo_link.Text.ToString() + ".jpeg");
+            ////var request = WebRequest.Create(@"http://google.com/test.png");
+
+            //using (var response = request.GetResponse())
+            //using (var stream = response.GetResponseStream())
+            //{
+            //    pictureBox1.Image = Bitmap.FromStream(stream);
+            //}
+
             tabControl1.SelectedIndex = 11;
         }
 
         private void button_back_to_offer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 8;
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_revoke_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_characteristic_SelectedValueChanged(object sender, EventArgs e)
+        {
+            comboBox_characteristic2.Items.Clear();
+            switch (comboBox_characteristic.SelectedItem.ToString())
+            {
+                case "Стиль":
+                    {
+                        PushToComboBox(ref comboBox_characteristic2, style);
+                        comboBox_characteristic2.SelectedIndex = 0;
+                        break;
+                    }
+                case "Пол":
+                    {
+                        PushToComboBox(ref comboBox_characteristic2, sex);
+                        comboBox_characteristic2.SelectedIndex = 0;
+                        break;
+                    }
+                case "Сезон":
+                    {
+                        PushToComboBox(ref comboBox_characteristic2, season);
+                        comboBox_characteristic2.SelectedIndex = 0;
+                        break;
+                    }
+                case "Материал":
+                    {
+                        PushToComboBox(ref comboBox_characteristic2, material);
+                        comboBox_characteristic2.SelectedIndex = 0;
+                        break;
+                    }
+                case "Цвет":
+                    {
+                        PushToComboBox(ref comboBox_characteristic2, color);
+                        comboBox_characteristic2.SelectedIndex = 0;
+                        break;
+                    }
+                default: { break; }
+            }
+        }
+
+        private void PushToComboBox(ref ComboBox cb, List<string> list)
+        {
+            foreach (var str in list) {
+                cb.Items.Add(str);
+            }
+        }
+
+        private void pictureBox_set_style_Click(object sender, EventArgs e)
+        {
+            panel_set.Visible = true;
+            radioButton1.Text = "Класический";
+            radioButton2.Text = "Спортивный";
+            radioButton3.Text = "Домашний";
+            radioButton4.Text = "Рабочий";
+            radioButton5.Text = "Специальнынй";
+            radioButton6.Visible = false;
+        }
+
+        private void SaveCurSet(object sender, EventArgs e)
+        {
+            string str = string.Empty;
+            if (radioButton1.Checked)
+            {
+                str = radioButton1.Text;
+            }
+            else if (radioButton2.Checked)
+            {
+                str = radioButton2.Text;
+            }
+            else if (radioButton3.Checked)
+            {
+                str = radioButton3.Text;
+            }
+            else if (radioButton4.Checked)
+            {
+                str = radioButton4.Text;
+            }
+            else if (radioButton5.Checked)
+            {
+                str = radioButton5.Text;
+            } else if (radioButton6.Checked)
+            {
+                str = radioButton6.Text;
+            }
+
+            if (str != string.Empty)
+            {
+                pictureBox_set_del_style.Visible = true;
+                panel_set.Visible = false;
+
+                if (style.Contains(str))
+                {
+                    label_set_cur_style.Text = str;
+                    label_set_cur_style.Visible = true;
+                    pictureBox_set_del_style.Visible = true;
+                }
+                else if (sex.Contains(str))
+                {
+                    label_set_cur_sex.Text = str;
+                    label_set_cur_sex.Visible = true;
+                    pictureBox_set_del_sex.Visible = true;
+                }
+                else if (season.Contains(str))
+                {
+                    label_set_cur_season.Text = str;
+                    label_set_cur_season.Visible = true;
+                    pictureBox_set_del_season.Visible = true;
+                }
+                else if (material.Contains(str))
+                {
+                    label_set_cur_material.Text = str;
+                    label_set_cur_material.Visible = true;
+                    pictureBox_set_del_material.Visible = true;
+                } else if (color.Contains(str))
+                {
+                    label_set_cur_color.Text = str;
+                    label_set_cur_color.Visible = true;
+                    pictureBox_set_del_color.Visible = true;
+                }
+            }
+        }
+
+        private void pictureBox_set_del_style_Click(object sender, EventArgs e)
+        {
+            label_set_cur_style.Text = string.Empty;
+            label_set_cur_style.Visible = false;
+            pictureBox_set_del_style.Visible = false;
+        }
+
+        private void pictureBox_set_sex_Click(object sender, EventArgs e)
+        {
+            panel_set.Visible = true;
+            radioButton1.Text = "Мужской";
+            radioButton2.Text = "Женский";
+            radioButton3.Text = "Унисекс";
+            radioButton4.Visible = false;
+            radioButton5.Visible = false;
+            radioButton6.Visible = false;
+        }
+
+        private void pictureBox_set_season_Click(object sender, EventArgs e)
+        {
+            panel_set.Visible = true;
+            radioButton1.Text = "Зима";
+            radioButton2.Text = "Осень/Весна";
+            radioButton3.Text = "Лето";
+            radioButton4.Text = "Демисезон";
+            radioButton5.Visible = false;
+            radioButton6.Visible = false;
+        }
+
+        private void pictureBox_set_material_Click(object sender, EventArgs e)
+        {
+            panel_set.Visible = true;
+            radioButton1.Text = "Хлопок";
+            radioButton2.Text = "Синтетика";
+            radioButton3.Text = "Кожа";
+            radioButton4.Text = "Мех";
+            radioButton5.Visible = false;
+            radioButton6.Visible = false;
+        }
+
+        private void pictureBox_set_color_Click(object sender, EventArgs e)
+        {
+            panel_set.Visible = true;
+            radioButton1.Text = "Белый";
+            radioButton2.Text = "Черный";
+            radioButton3.Text = "Красный";
+            radioButton4.Text = "Синий";
+            radioButton5.Text = "Зеленый";
+            radioButton6.Text = "Желтый";
+        }
+
+        private void pictureBox_set_del_sex_Click(object sender, EventArgs e)
+        {
+            label_set_cur_sex.Text = string.Empty;
+            label_set_cur_sex.Visible = false;
+            pictureBox_set_del_sex.Visible = false;
+        }
+
+        private void pictureBox_set_del_season_Click(object sender, EventArgs e)
+        {
+            label_set_cur_season.Text = string.Empty;
+            label_set_cur_season.Visible = false;
+            pictureBox_set_del_season.Visible = false;
+        }
+
+        private void pictureBox_set_del_material_Click(object sender, EventArgs e)
+        {
+            label_set_cur_material.Text = string.Empty;
+            label_set_cur_material.Visible = false;
+            pictureBox_set_del_material.Visible = false;
+        }
+
+        private void pictureBox_set_del_color_Click(object sender, EventArgs e)
+        {
+            label_set_cur_color.Text = string.Empty;
+            label_set_cur_color.Visible = false;
+            pictureBox_set_del_color.Visible = false;
+        }
+
+        private void button_set_save_sets_Click(object sender, EventArgs e)
+        {
+            int ch_style = style.IndexOf(label_set_cur_style.Text) + 1;
+            int ch_sex = sex.IndexOf(label_set_cur_sex.Text) + 1;
+            int ch_season = season.IndexOf(label_set_cur_season.Text) + 1;
+            int ch_material = material.IndexOf(label_set_material.Text) + 1;
+            int ch_color = color.IndexOf(label_set_cur_color.Text) + 1;
+
+            NpgsqlConnection conn = GetConnection();
+            NpgsqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = $"UPDATE ";
         }
     }
    
