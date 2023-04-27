@@ -29,12 +29,15 @@
 
 ![image](https://user-images.githubusercontent.com/113188055/234973075-272f17d1-65ef-4f6a-8e66-eb269a4e3967.png)
 ![image](https://user-images.githubusercontent.com/113188055/234973127-be7c24c4-e54a-405f-9723-15ee8d298831.png)
+
 Ожидаемый результат:
 
 Элементы приложения будут находится посередине.
 
 ![image](https://user-images.githubusercontent.com/113188055/234973180-1feaea39-3646-46de-93de-407edc8bdbe6.png)
+
 **Название: Убрать вылезающее окно с ошибкой после входа.**
+
 Проект: Shop
 
 Компонент приложения: Окно для входа в личный кабинет
@@ -67,6 +70,7 @@
 Вход в аккаунт без ошибок.
 
 ![image](https://user-images.githubusercontent.com/113188055/234973316-9ffdf9a2-16b1-4f6f-9379-51472a947cf8.png)
+
 **Название: После входа не появляется данные о пользователе.**
 Проект: Shop
 
