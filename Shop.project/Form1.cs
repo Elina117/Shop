@@ -831,10 +831,14 @@ namespace Shop.project
                         user.login = dr.GetString(1);
                         user.password = dr.GetString(2);
                         user.email = dr.GetString(3);
+                        user.name = dr.GetString(4);
+                        user.birthday = dr.GetString(5);
 
                         textBox_lc_name .Text = user.name;
                         textBox_lc_email.Text = user.email;
                         textBox_lc_login.Text = user.login;
+                        textBox_lc_birthday.Text = user.birthday;
+                        
 
                         dr.Close();
                     }

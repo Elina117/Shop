@@ -14,6 +14,7 @@ namespace Shop.project
         public string email;
         public string name;
         public int code;
+        public string birthday;
 
         public int rec_id;
         public string rec_name;
@@ -28,6 +29,7 @@ namespace Shop.project
             email = string.Empty;
             name = string.Empty;
             code = 0;
+            birthday = string.Empty;
 
             rec_id = 0;
             rec_name = string.Empty;
