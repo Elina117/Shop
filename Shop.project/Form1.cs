@@ -33,6 +33,32 @@ namespace Shop.project
 
         private string add_style, add_sex, add_season, add_material, add_color;
 
+        private int clothe_id = 0;
+
+        private struct Clothe
+        {
+            public int id;
+            public string name;
+            public string url;
+            public string description;
+            public int[] characteristic;
+            public int like;
+
+            public void _Clothe(int id, string name, string url, string description, int[] characteristic, int like)
+            {
+                this.id = id;
+                this.name = name;
+                this.url = url;
+                this.description = description;
+                this.characteristic = characteristic;
+                this.like = like;
+            }
+        }
+
+        private List<Clothe> Clothes = new List<Clothe>();
+
+        private int lenta_clothe_id = 0;
+
         private void Init()
         {
             reserve_code = new Random();
@@ -120,7 +146,7 @@ namespace Shop.project
 
                     conn.Open();
 
-                    cmd.CommandText = $"SELECT EXISTS (SELECT * from user WHERE email = '{textBox_email.Text}')";
+                    cmd.CommandText = $"SELECT EXISTS (SELECT * from \"user\" WHERE email = '{textBox_email.Text}')";
                     NpgsqlDataReader dr = cmd.ExecuteReader();
 
                     if (!dr.Read())
@@ -133,7 +159,7 @@ namespace Shop.project
 
                         dr.Close();
 
-                        cmd.CommandText = $"SELECT email FROM user WHERE login = '{textBox_reserve_login.Text}'";
+                        cmd.CommandText = $"SELECT email FROM \"user\" WHERE login = '{textBox_reserve_login.Text}'";
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
@@ -154,8 +180,6 @@ namespace Shop.project
                     {
                         MessageBox.Show("Ошибка! Данный пользователь не существует!");
                     }
-
-
                 }
 
                 catch (NpgsqlException ex)
@@ -437,6 +461,55 @@ namespace Shop.project
                         MessageBox.Show("Сначала настройте рекомендации!\n(Настройка рекомендации)");
                     } else
                     {
+                        dr.Close();
+                        cmd.CommandText = $"SELECT l.*, r.* FROM clothe l LEFT JOIN characteristic r ON l.fk_characteristic_id = r.id ORDER BY \"like\"";
+
+                        dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            Clothe clothe = new Clothe
+                            {
+                                id = dr.GetInt32(0),
+                                name = dr.GetString(1),
+                                url = dr.GetString(2),
+                                description = dr.GetString(3),
+                                characteristic = new int[] { dr.GetInt32(4), dr.GetInt32(7), dr.GetInt32(8), dr.GetInt32(9), dr.GetInt32(10), dr.GetInt32(11) },
+                                like = dr.GetInt32(5)
+                            };
+                            Clothes.Add(clothe);
+                        }
+                        dr.Close();
+
+                        cmd.CommandText = "SELECT * FROM characteristic";
+
+                        dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            for (int i = 0; i < Clothes.Count - 1; i++)
+                            {
+                                if (Clothes[i].characteristic[0] == dr.GetInt32(0))
+                                {
+                                    for (int j = 1; j < 5; j++)
+                                    {
+                                        Clothes[i].characteristic[j] = dr.GetInt32(j);
+                                    }
+                                }
+                            }
+                        }
+                        dr.Close();
+
+                        if (Clothes.Count == 0)
+                        {
+                            return;
+                        }
+                        label_name_of_clothe.Text = Clothes[0].name;
+                        label_discription_clothe.Text = Clothes[0].description;
+                        webBrowser_clothe.Url = new Uri(Clothes[0].url);
+                        label_like.Text = Clothes[0].like.ToString();
+                        clothe_id = Clothes[0].id;
+
                         tabControl1.SelectedIndex = 6;
                     }
                 }
@@ -831,16 +904,19 @@ namespace Shop.project
                         user.login = dr.GetString(1);
                         user.password = dr.GetString(2);
                         user.email = dr.GetString(3);
+                        user.name = dr.GetString(4);
+                        user.birthday = dr.GetString(5);
 
                         textBox_lc_name .Text = user.name;
                         textBox_lc_email.Text = user.email;
                         textBox_lc_login.Text = user.login;
+                        textBox_lc_birthday.Text = user.birthday;
 
                         dr.Close();
                     }
                 }
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
                 MessageBox.Show("Ошибка подключения к серверу, попробуйте ещё раз!\n" + ex.Message);
             }
@@ -1196,6 +1272,78 @@ namespace Shop.project
                 MessageBox.Show("Ошибка!\n" + ex);
             }
             finally { conn.Close(); }
+        }
+
+        private void textBox_lc_name_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_lc_name.Text == "NULL") textBox_lc_name.Text = "Не указано";
+        }
+
+        private void textBox_lc_birthday_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_lc_birthday.Text == "NULL") textBox_lc_birthday.Text = "Не указано";
+        }
+
+        private void button_next_clothe_Click(object sender, EventArgs e)
+        {
+            foreach (var clth in Clothes)
+            {
+                if (clth.id == clothe_id)
+                {
+                    int index = Clothes.IndexOf(clth) + 1;
+
+                    if (index >= Clothes.Count || index == 0)
+                    {
+                        MessageBox.Show("Рекомендации закончились!");
+                        return;
+                    }
+
+                    Clothe next_clothe = Clothes[index];
+                    label_name_of_clothe.Text = next_clothe.name;
+                    label_discription_clothe.Text = next_clothe.description;
+                    webBrowser_clothe.Url = new Uri(next_clothe.url);
+                    clothe_id = next_clothe.id;
+                }
+            }
+        }
+
+        private void button_previous_сlothe_Click(object sender, EventArgs e)
+        {
+            foreach (var clth in Clothes)
+            {
+                if (clth.id == clothe_id)
+                {
+                    int index = Clothes.IndexOf(clth) - 1;
+
+                    if (index < 0)
+                    {
+                        MessageBox.Show("Рекомендации закончились!");
+                        return;
+                    }
+
+                    Clothe next_clothe = Clothes[index];
+                    label_name_of_clothe.Text = next_clothe.name;
+                    label_discription_clothe.Text = next_clothe.description;
+                    webBrowser_clothe.Url = new Uri(next_clothe.url);
+                    clothe_id = next_clothe.id;
+                }
+            }
+        }
+
+        private void webBrowser_clothe_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+            webBrowser_clothe.Document.Body.Style = "zoom:20%";
+        }
+
+        private void webBrowser2_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser2.Document.Body.Style = "zoom:20%";
+        }
+
+        private void webBrowser3_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser3.Document.Body.Style = "zoom:20%";
         }
 
         private void pictureBox_set_del_color_Click(object sender, EventArgs e)

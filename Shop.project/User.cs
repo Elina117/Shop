@@ -14,11 +14,9 @@ namespace Shop.project
         public string email;
         public string name;
         public int code;
-
-        public int rec_id;
-        public string rec_name;
-        public string rec_characteristic;
-        public string rec_description;
+        public string birthday;
+        public int char_id;
+        public int wish_id;
 
         public void Clear()
         {
@@ -28,11 +26,10 @@ namespace Shop.project
             email = string.Empty;
             name = string.Empty;
             code = 0;
+            birthday = string.Empty;
 
-            rec_id = 0;
-            rec_name = string.Empty;
-            rec_characteristic = string.Empty;
-            rec_description = string.Empty;
+            char_id = 0;
+            wish_id = 0;
 
         }
        

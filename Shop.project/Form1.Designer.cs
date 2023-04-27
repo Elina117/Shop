@@ -30,6 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label45 = new System.Windows.Forms.Label();
             this.button42 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
@@ -38,6 +50,18 @@
             this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label41 = new System.Windows.Forms.Label();
             this.button35 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -110,11 +134,12 @@
             this.button_previous_сlothe = new System.Windows.Forms.Button();
             this.button_next_clothe = new System.Windows.Forms.Button();
             this.groupBox_lenta = new System.Windows.Forms.GroupBox();
+            this.webBrowser_clothe = new System.Windows.Forms.WebBrowser();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_add_to_favourites = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox_like = new System.Windows.Forms.PictureBox();
-            this.label37 = new System.Windows.Forms.Label();
+            this.label_like = new System.Windows.Forms.Label();
             this.label_discription_clothe = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_name_of_clothe = new System.Windows.Forms.Label();
@@ -209,7 +234,17 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label_prev_name = new System.Windows.Forms.Label();
             this.tabPage11.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel9.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.panel_add.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -251,6 +286,9 @@
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.tabPage11.Controls.Add(this.button43);
+            this.tabPage11.Controls.Add(this.button44);
+            this.tabPage11.Controls.Add(this.groupBox4);
             this.tabPage11.Controls.Add(this.button42);
             this.tabPage11.Controls.Add(this.button41);
             this.tabPage11.Controls.Add(this.button40);
@@ -265,6 +303,149 @@
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "lc_podborki";
             // 
+            // button43
+            // 
+            this.button43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
+            this.button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            this.button43.Location = new System.Drawing.Point(315, 397);
+            this.button43.Margin = new System.Windows.Forms.Padding(2);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(169, 31);
+            this.button43.TabIndex = 15;
+            this.button43.Text = "Предыдущее";
+            this.button43.UseVisualStyleBackColor = false;
+            // 
+            // button44
+            // 
+            this.button44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
+            this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            this.button44.Location = new System.Drawing.Point(511, 397);
+            this.button44.Margin = new System.Windows.Forms.Padding(2);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(169, 31);
+            this.button44.TabIndex = 14;
+            this.button44.Text = "Далее";
+            this.button44.UseVisualStyleBackColor = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(202)))), ((int)(((byte)(193)))));
+            this.groupBox4.Controls.Add(this.webBrowser3);
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Controls.Add(this.panel8);
+            this.groupBox4.Controls.Add(this.label44);
+            this.groupBox4.Controls.Add(this.panel9);
+            this.groupBox4.Location = new System.Drawing.Point(164, 112);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(517, 260);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            // 
+            // webBrowser3
+            // 
+            this.webBrowser3.Location = new System.Drawing.Point(9, 39);
+            this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser3.Name = "webBrowser3";
+            this.webBrowser3.ScrollBarsEnabled = false;
+            this.webBrowser3.Size = new System.Drawing.Size(174, 173);
+            this.webBrowser3.TabIndex = 7;
+            this.webBrowser3.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser3.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser3_DocumentCompleted);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Shop.project.Properties.Resources.star;
+            this.pictureBox4.Location = new System.Drawing.Point(440, 168);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label42.Location = new System.Drawing.Point(193, 181);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(223, 22);
+            this.label42.TabIndex = 5;
+            this.label42.Text = "Добавить в избранное";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.panel8.Controls.Add(this.pictureBox5);
+            this.panel8.Controls.Add(this.label43);
+            this.panel8.Location = new System.Drawing.Point(0, 214);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(517, 46);
+            this.panel8.TabIndex = 4;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Shop.project.Properties.Resources.bezh_like;
+            this.pictureBox5.Location = new System.Drawing.Point(46, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(55, 44);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.label43.Location = new System.Drawing.Point(14, 9);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(27, 29);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "0";
+            // 
+            // label44
+            // 
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label44.Location = new System.Drawing.Point(188, 39);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(296, 127);
+            this.label44.TabIndex = 1;
+            this.label44.Text = "Описание товара";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.panel9.Controls.Add(this.label45);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(677, 36);
+            this.panel9.TabIndex = 0;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label45.Location = new System.Drawing.Point(4, 7);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(125, 25);
+            this.label45.TabIndex = 0;
+            this.label45.Text = "Тип товара";
+            // 
             // button42
             // 
             this.button42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
@@ -274,7 +455,7 @@
             this.button42.Location = new System.Drawing.Point(0, 308);
             this.button42.Margin = new System.Windows.Forms.Padding(2);
             this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(181, 44);
+            this.button42.Size = new System.Drawing.Size(151, 44);
             this.button42.TabIndex = 10;
             this.button42.Text = "Подборки";
             this.button42.UseVisualStyleBackColor = false;
@@ -289,7 +470,7 @@
             this.button41.Location = new System.Drawing.Point(0, 235);
             this.button41.Margin = new System.Windows.Forms.Padding(2);
             this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(181, 44);
+            this.button41.Size = new System.Drawing.Size(151, 44);
             this.button41.TabIndex = 9;
             this.button41.Text = "Избранное";
             this.button41.UseVisualStyleBackColor = false;
@@ -304,7 +485,7 @@
             this.button40.Location = new System.Drawing.Point(0, 161);
             this.button40.Margin = new System.Windows.Forms.Padding(2);
             this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(181, 44);
+            this.button40.Size = new System.Drawing.Size(151, 44);
             this.button40.TabIndex = 8;
             this.button40.Text = "Мои данные";
             this.button40.UseVisualStyleBackColor = false;
@@ -373,6 +554,9 @@
             // tabPage10
             // 
             this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.tabPage10.Controls.Add(this.button19);
+            this.tabPage10.Controls.Add(this.button20);
+            this.tabPage10.Controls.Add(this.groupBox3);
             this.tabPage10.Controls.Add(this.button35);
             this.tabPage10.Controls.Add(this.button34);
             this.tabPage10.Controls.Add(this.button33);
@@ -387,6 +571,149 @@
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "lc_izbr";
             // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            this.button19.Location = new System.Drawing.Point(324, 406);
+            this.button19.Margin = new System.Windows.Forms.Padding(2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(169, 31);
+            this.button19.TabIndex = 12;
+            this.button19.Text = "Предыдущее";
+            this.button19.UseVisualStyleBackColor = false;
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            this.button20.Location = new System.Drawing.Point(520, 406);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(169, 31);
+            this.button20.TabIndex = 11;
+            this.button20.Text = "Далее";
+            this.button20.UseVisualStyleBackColor = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(202)))), ((int)(((byte)(193)))));
+            this.groupBox3.Controls.Add(this.webBrowser2);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.panel5);
+            this.groupBox3.Controls.Add(this.label37);
+            this.groupBox3.Controls.Add(this.panel7);
+            this.groupBox3.Location = new System.Drawing.Point(173, 121);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(517, 260);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(9, 39);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.ScrollBarsEnabled = false;
+            this.webBrowser2.Size = new System.Drawing.Size(174, 173);
+            this.webBrowser2.TabIndex = 7;
+            this.webBrowser2.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Shop.project.Properties.Resources.star;
+            this.pictureBox2.Location = new System.Drawing.Point(440, 168);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.Location = new System.Drawing.Point(193, 181);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(223, 22);
+            this.label35.TabIndex = 5;
+            this.label35.Text = "Добавить в избранное";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.panel5.Controls.Add(this.label36);
+            this.panel5.Location = new System.Drawing.Point(0, 214);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(517, 46);
+            this.panel5.TabIndex = 4;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Shop.project.Properties.Resources.bezh_like;
+            this.pictureBox3.Location = new System.Drawing.Point(46, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(55, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.label36.Location = new System.Drawing.Point(14, 9);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(27, 29);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "0";
+            // 
+            // label37
+            // 
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label37.Location = new System.Drawing.Point(188, 39);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(296, 127);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Описание товара";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.panel7.Controls.Add(this.label41);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(677, 36);
+            this.panel7.TabIndex = 0;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label41.Location = new System.Drawing.Point(4, 7);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(125, 25);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Тип товара";
+            // 
             // button35
             // 
             this.button35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(116)))), ((int)(((byte)(127)))));
@@ -396,7 +723,7 @@
             this.button35.Location = new System.Drawing.Point(0, 311);
             this.button35.Margin = new System.Windows.Forms.Padding(2);
             this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(181, 44);
+            this.button35.Size = new System.Drawing.Size(152, 44);
             this.button35.TabIndex = 9;
             this.button35.Text = "Подборки";
             this.button35.UseVisualStyleBackColor = false;
@@ -411,7 +738,7 @@
             this.button34.Location = new System.Drawing.Point(0, 236);
             this.button34.Margin = new System.Windows.Forms.Padding(2);
             this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(181, 44);
+            this.button34.Size = new System.Drawing.Size(152, 44);
             this.button34.TabIndex = 8;
             this.button34.Text = "Избранное";
             this.button34.UseVisualStyleBackColor = false;
@@ -426,7 +753,7 @@
             this.button33.Location = new System.Drawing.Point(0, 163);
             this.button33.Margin = new System.Windows.Forms.Padding(2);
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(181, 44);
+            this.button33.Size = new System.Drawing.Size(152, 44);
             this.button33.TabIndex = 7;
             this.button33.Text = "Мои данные";
             this.button33.UseVisualStyleBackColor = false;
@@ -1326,6 +1653,7 @@
             this.button_previous_сlothe.TabIndex = 8;
             this.button_previous_сlothe.Text = "Предыдущее";
             this.button_previous_сlothe.UseVisualStyleBackColor = false;
+            this.button_previous_сlothe.Click += new System.EventHandler(this.button_previous_сlothe_Click);
             // 
             // button_next_clothe
             // 
@@ -1339,10 +1667,12 @@
             this.button_next_clothe.TabIndex = 7;
             this.button_next_clothe.Text = "Далее";
             this.button_next_clothe.UseVisualStyleBackColor = false;
+            this.button_next_clothe.Click += new System.EventHandler(this.button_next_clothe_Click);
             // 
             // groupBox_lenta
             // 
             this.groupBox_lenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(202)))), ((int)(((byte)(193)))));
+            this.groupBox_lenta.Controls.Add(this.webBrowser_clothe);
             this.groupBox_lenta.Controls.Add(this.pictureBox1);
             this.groupBox_lenta.Controls.Add(this.label_add_to_favourites);
             this.groupBox_lenta.Controls.Add(this.panel4);
@@ -1355,6 +1685,17 @@
             this.groupBox_lenta.Size = new System.Drawing.Size(677, 263);
             this.groupBox_lenta.TabIndex = 6;
             this.groupBox_lenta.TabStop = false;
+            // 
+            // webBrowser_clothe
+            // 
+            this.webBrowser_clothe.Location = new System.Drawing.Point(9, 39);
+            this.webBrowser_clothe.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser_clothe.Name = "webBrowser_clothe";
+            this.webBrowser_clothe.ScrollBarsEnabled = false;
+            this.webBrowser_clothe.Size = new System.Drawing.Size(174, 173);
+            this.webBrowser_clothe.TabIndex = 7;
+            this.webBrowser_clothe.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser_clothe.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser_clothe_DocumentCompleted);
             // 
             // pictureBox1
             // 
@@ -1384,7 +1725,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
             this.panel4.Controls.Add(this.pictureBox_like);
-            this.panel4.Controls.Add(this.label37);
+            this.panel4.Controls.Add(this.label_like);
             this.panel4.Location = new System.Drawing.Point(0, 216);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
@@ -1402,26 +1743,25 @@
             this.pictureBox_like.TabIndex = 7;
             this.pictureBox_like.TabStop = false;
             // 
-            // label37
+            // label_like
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.label37.Location = new System.Drawing.Point(14, 9);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(27, 29);
-            this.label37.TabIndex = 0;
-            this.label37.Text = "0";
+            this.label_like.AutoSize = true;
+            this.label_like.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_like.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.label_like.Location = new System.Drawing.Point(14, 9);
+            this.label_like.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_like.Name = "label_like";
+            this.label_like.Size = new System.Drawing.Size(27, 29);
+            this.label_like.TabIndex = 0;
+            this.label_like.Text = "0";
             // 
             // label_discription_clothe
             // 
-            this.label_discription_clothe.AutoSize = true;
             this.label_discription_clothe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_discription_clothe.Location = new System.Drawing.Point(237, 52);
+            this.label_discription_clothe.Location = new System.Drawing.Point(188, 39);
             this.label_discription_clothe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_discription_clothe.Name = "label_discription_clothe";
-            this.label_discription_clothe.Size = new System.Drawing.Size(186, 25);
+            this.label_discription_clothe.Size = new System.Drawing.Size(486, 127);
             this.label_discription_clothe.TabIndex = 1;
             this.label_discription_clothe.Text = "Описание товара";
             // 
@@ -1545,6 +1885,7 @@
             this.textBox_lc_birthday.Name = "textBox_lc_birthday";
             this.textBox_lc_birthday.Size = new System.Drawing.Size(249, 30);
             this.textBox_lc_birthday.TabIndex = 31;
+            this.textBox_lc_birthday.TextChanged += new System.EventHandler(this.textBox_lc_birthday_TextChanged);
             // 
             // label27
             // 
@@ -1638,6 +1979,7 @@
             this.textBox_lc_name.Name = "textBox_lc_name";
             this.textBox_lc_name.Size = new System.Drawing.Size(249, 30);
             this.textBox_lc_name.TabIndex = 22;
+            this.textBox_lc_name.TextChanged += new System.EventHandler(this.textBox_lc_name_TextChanged);
             // 
             // label26
             // 
@@ -2680,7 +3022,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Store";
             this.tabPage11.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.tabPage9.ResumeLayout(false);
             this.panel_add.ResumeLayout(false);
             this.panel_add.PerformLayout();
@@ -2861,7 +3219,7 @@
         private System.Windows.Forms.Label label_add_to_favourites;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox_like;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label_like;
         private System.Windows.Forms.ComboBox comboBox_characteristic;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label39;
@@ -2917,6 +3275,31 @@
         private System.Windows.Forms.RadioButton radioButton_add2;
         private System.Windows.Forms.RadioButton radioButton_add1;
         private System.Windows.Forms.Button button_add_save;
+        private System.Windows.Forms.WebBrowser webBrowser_clothe;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.WebBrowser webBrowser3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label41;
     }
 }
 
