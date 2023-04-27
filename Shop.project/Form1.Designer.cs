@@ -46,10 +46,17 @@
             this.button30 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.panel_add = new System.Windows.Forms.Panel();
+            this.radioButton_add6 = new System.Windows.Forms.RadioButton();
+            this.radioButton_add5 = new System.Windows.Forms.RadioButton();
+            this.radioButton_add4 = new System.Windows.Forms.RadioButton();
+            this.radioButton_add3 = new System.Windows.Forms.RadioButton();
+            this.radioButton_add2 = new System.Windows.Forms.RadioButton();
+            this.radioButton_add1 = new System.Windows.Forms.RadioButton();
+            this.button_add_save = new System.Windows.Forms.Button();
             this.button_save_rec = new System.Windows.Forms.Button();
             this.button_revoke = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_characteristic2 = new System.Windows.Forms.ComboBox();
             this.comboBox_characteristic = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -204,6 +211,7 @@
             this.tabPage11.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.panel_add.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel_set.SuspendLayout();
@@ -360,7 +368,7 @@
             this.button36.TabIndex = 2;
             this.button36.Text = "Лента";
             this.button36.UseVisualStyleBackColor = false;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
+            this.button36.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage10
             // 
@@ -482,11 +490,12 @@
             this.button29.TabIndex = 1;
             this.button29.Text = "Лента";
             this.button29.UseVisualStyleBackColor = false;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.button29.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage9
             // 
             this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.tabPage9.Controls.Add(this.panel_add);
             this.tabPage9.Controls.Add(this.button_save_rec);
             this.tabPage9.Controls.Add(this.button_revoke);
             this.tabPage9.Controls.Add(this.groupBox1);
@@ -502,6 +511,108 @@
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "lc_offer";
             this.tabPage9.Click += new System.EventHandler(this.tabPage9_Click);
+            // 
+            // panel_add
+            // 
+            this.panel_add.BackColor = System.Drawing.Color.White;
+            this.panel_add.Controls.Add(this.radioButton_add6);
+            this.panel_add.Controls.Add(this.radioButton_add5);
+            this.panel_add.Controls.Add(this.radioButton_add4);
+            this.panel_add.Controls.Add(this.radioButton_add3);
+            this.panel_add.Controls.Add(this.radioButton_add2);
+            this.panel_add.Controls.Add(this.radioButton_add1);
+            this.panel_add.Controls.Add(this.button_add_save);
+            this.panel_add.Location = new System.Drawing.Point(325, 215);
+            this.panel_add.Name = "panel_add";
+            this.panel_add.Size = new System.Drawing.Size(182, 256);
+            this.panel_add.TabIndex = 28;
+            this.panel_add.Visible = false;
+            // 
+            // radioButton_add6
+            // 
+            this.radioButton_add6.AutoSize = true;
+            this.radioButton_add6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add6.Location = new System.Drawing.Point(17, 185);
+            this.radioButton_add6.Name = "radioButton_add6";
+            this.radioButton_add6.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_add6.TabIndex = 20;
+            this.radioButton_add6.TabStop = true;
+            this.radioButton_add6.Text = "radioButton1";
+            this.radioButton_add6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_add5
+            // 
+            this.radioButton_add5.AutoSize = true;
+            this.radioButton_add5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add5.Location = new System.Drawing.Point(17, 150);
+            this.radioButton_add5.Name = "radioButton_add5";
+            this.radioButton_add5.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_add5.TabIndex = 20;
+            this.radioButton_add5.TabStop = true;
+            this.radioButton_add5.Text = "radioButton1";
+            this.radioButton_add5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_add4
+            // 
+            this.radioButton_add4.AutoSize = true;
+            this.radioButton_add4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add4.Location = new System.Drawing.Point(17, 115);
+            this.radioButton_add4.Name = "radioButton_add4";
+            this.radioButton_add4.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_add4.TabIndex = 20;
+            this.radioButton_add4.TabStop = true;
+            this.radioButton_add4.Text = "radioButton1";
+            this.radioButton_add4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_add3
+            // 
+            this.radioButton_add3.AutoSize = true;
+            this.radioButton_add3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add3.Location = new System.Drawing.Point(17, 80);
+            this.radioButton_add3.Name = "radioButton_add3";
+            this.radioButton_add3.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_add3.TabIndex = 20;
+            this.radioButton_add3.TabStop = true;
+            this.radioButton_add3.Text = "radioButton1";
+            this.radioButton_add3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_add2
+            // 
+            this.radioButton_add2.AutoSize = true;
+            this.radioButton_add2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add2.Location = new System.Drawing.Point(17, 45);
+            this.radioButton_add2.Name = "radioButton_add2";
+            this.radioButton_add2.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_add2.TabIndex = 20;
+            this.radioButton_add2.TabStop = true;
+            this.radioButton_add2.Text = "radioButton1";
+            this.radioButton_add2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_add1
+            // 
+            this.radioButton_add1.AutoSize = true;
+            this.radioButton_add1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton_add1.Location = new System.Drawing.Point(17, 13);
+            this.radioButton_add1.Name = "radioButton_add1";
+            this.radioButton_add1.Size = new System.Drawing.Size(105, 19);
+            this.radioButton_add1.TabIndex = 20;
+            this.radioButton_add1.TabStop = true;
+            this.radioButton_add1.Text = "radioButton12";
+            this.radioButton_add1.UseVisualStyleBackColor = true;
+            // 
+            // button_add_save
+            // 
+            this.button_add_save.BackColor = System.Drawing.Color.SpringGreen;
+            this.button_add_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_add_save.ForeColor = System.Drawing.Color.White;
+            this.button_add_save.Location = new System.Drawing.Point(17, 209);
+            this.button_add_save.Margin = new System.Windows.Forms.Padding(2);
+            this.button_add_save.Name = "button_add_save";
+            this.button_add_save.Size = new System.Drawing.Size(134, 34);
+            this.button_add_save.TabIndex = 19;
+            this.button_add_save.Text = "Сохранить";
+            this.button_add_save.UseVisualStyleBackColor = false;
+            this.button_add_save.Click += new System.EventHandler(this.button_add_save_Click);
             // 
             // button_save_rec
             // 
@@ -536,7 +647,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(202)))), ((int)(((byte)(193)))));
-            this.groupBox1.Controls.Add(this.comboBox_characteristic2);
             this.groupBox1.Controls.Add(this.comboBox_characteristic);
             this.groupBox1.Controls.Add(this.label40);
             this.groupBox1.Controls.Add(this.label39);
@@ -552,26 +662,9 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(364, 345);
+            this.groupBox1.Size = new System.Drawing.Size(364, 308);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            // 
-            // comboBox_characteristic2
-            // 
-            this.comboBox_characteristic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox_characteristic2.FormattingEnabled = true;
-            this.comboBox_characteristic2.Items.AddRange(new object[] {
-            "Класический",
-            "Спортивный",
-            "Домашний",
-            "Рабочий",
-            "Специальный"});
-            this.comboBox_characteristic2.Location = new System.Drawing.Point(22, 179);
-            this.comboBox_characteristic2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox_characteristic2.Name = "comboBox_characteristic2";
-            this.comboBox_characteristic2.Size = new System.Drawing.Size(318, 28);
-            this.comboBox_characteristic2.TabIndex = 14;
-            this.comboBox_characteristic2.Text = "Класический";
             // 
             // comboBox_characteristic
             // 
@@ -594,7 +687,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(75, 229);
+            this.label40.Location = new System.Drawing.Point(75, 182);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(83, 16);
@@ -615,7 +708,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label38.Location = new System.Drawing.Point(18, 225);
+            this.label38.Location = new System.Drawing.Point(18, 178);
             this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(55, 20);
@@ -625,7 +718,7 @@
             // textBox_photo_link
             // 
             this.textBox_photo_link.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_photo_link.Location = new System.Drawing.Point(22, 247);
+            this.textBox_photo_link.Location = new System.Drawing.Point(22, 200);
             this.textBox_photo_link.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_photo_link.Name = "textBox_photo_link";
             this.textBox_photo_link.Size = new System.Drawing.Size(318, 26);
@@ -634,7 +727,7 @@
             // textBox_discription
             // 
             this.textBox_discription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_discription.Location = new System.Drawing.Point(22, 308);
+            this.textBox_discription.Location = new System.Drawing.Point(22, 261);
             this.textBox_discription.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_discription.Name = "textBox_discription";
             this.textBox_discription.Size = new System.Drawing.Size(318, 26);
@@ -644,7 +737,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(18, 287);
+            this.label31.Location = new System.Drawing.Point(18, 240);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(91, 20);
@@ -755,7 +848,7 @@
             this.button15.TabIndex = 1;
             this.button15.Text = "Лента";
             this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage8
             // 
@@ -1202,7 +1295,7 @@
             this.button25.TabIndex = 2;
             this.button25.Text = "Лента";
             this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage7
             // 
@@ -2501,6 +2594,7 @@
             this.button_prev_send_offer.TabIndex = 28;
             this.button_prev_send_offer.Text = "Отправить";
             this.button_prev_send_offer.UseVisualStyleBackColor = false;
+            this.button_prev_send_offer.Click += new System.EventHandler(this.button_prev_send_offer_Click);
             // 
             // button_prev_back_to_offer
             // 
@@ -2539,7 +2633,7 @@
             this.webBrowser1.Size = new System.Drawing.Size(174, 173);
             this.webBrowser1.TabIndex = 3;
             this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(webBrowser1_DocumentCompleted);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // label_prev_where_buy
             // 
@@ -2588,6 +2682,8 @@
             this.tabPage11.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
+            this.panel_add.ResumeLayout(false);
+            this.panel_add.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -2774,7 +2870,6 @@
         private System.Windows.Forms.Button button_previous_сlothe;
         private System.Windows.Forms.Button button_next_clothe;
         private System.Windows.Forms.Button button_save_rec;
-        private System.Windows.Forms.ComboBox comboBox_characteristic2;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.Button button_prev_send_offer;
         private System.Windows.Forms.Button button_prev_back_to_offer;
@@ -2814,6 +2909,14 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button_set_save_sets;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Panel panel_add;
+        private System.Windows.Forms.RadioButton radioButton_add6;
+        private System.Windows.Forms.RadioButton radioButton_add5;
+        private System.Windows.Forms.RadioButton radioButton_add4;
+        private System.Windows.Forms.RadioButton radioButton_add3;
+        private System.Windows.Forms.RadioButton radioButton_add2;
+        private System.Windows.Forms.RadioButton radioButton_add1;
+        private System.Windows.Forms.Button button_add_save;
     }
 }
 

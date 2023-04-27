@@ -20,11 +20,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Shop.project
 {
-
     public partial class Form1 : Form
     {
         private User user;
         public Random reserve_code;
+
+        private List<string> style = new List<string>() { "Класический", "Спортивный", "Домашний", "Рабочий", "Специальный"};
+        private List<string> sex = new List<string>() { "Мужской", "Женсикй", "Унисекс" };
+        private List<string> season = new List<string>() { "Зима", "Осень/Весна", "Лето", "Демисезон"};
+        private List<string> material = new List<string>() { "Хлопок", "Синтетика", "Кожа", "Мех" };
+        private List<string> color = new List<string>() { "Белый", "Черный", "Красный", "Синий", "Зеленый", "Желтый" };
+
+        private string add_style, add_sex, add_season, add_material, add_color;
 
         private void Init()
         {
@@ -34,11 +41,6 @@ namespace Shop.project
             repeat_new_password.UseSystemPasswordChar = true;
         }
 
-        private List<string> style = new List<string>() { "Класический", "Спортивный", "Домашний", "Рабочий", "Специальный"};
-        private List<string> sex = new List<string>() { "Мужской", "Женсикй", "Унисекс" };
-        private List<string> season = new List<string>() { "Зима", "Осень/Весна", "Лето", "Демисезон"};
-        private List<string> material = new List<string>() { "Хлопок", "Синтетика", "Кожа", "Мех" };
-        private List<string> color = new List<string>() { "Белый", "Черный", "Красный", "Синий", "Зеленый", "Желтый" };
 
         public Form1()
         {
@@ -373,7 +375,7 @@ namespace Shop.project
                 if (conn.State == ConnectionState.Open)
                 {
 
-                    cmd.CommandText = $"SELECT EXISTS (SELECT * from user WHERE email = '{textBox_email_in.Text}')";
+                    cmd.CommandText = $"SELECT EXISTS (SELECT * from \"user\" WHERE email = '{textBox_email_in.Text}')";
                     reader = cmd.ExecuteReader();
 
                     if (reader.Read() && reader.GetBoolean(0) == true)
@@ -383,10 +385,7 @@ namespace Shop.project
                     }
                     reader.Close();
 
-
-
-
-                    cmd.CommandText = $"SELECT EXISTS(SELECT * from user WHERE login = '{textBox_ligin_in.Text}');";
+                    cmd.CommandText = $"SELECT EXISTS(SELECT * from \"user\" WHERE login = '{textBox_ligin_in.Text}');";
                     reader = cmd.ExecuteReader();
 
                     if (reader.Read() && reader.GetBoolean(0) == true)
@@ -398,7 +397,7 @@ namespace Shop.project
 
 
 
-                    cmd.CommandText = $"INSERT INTO user(login, password, email) values ('{textBox_ligin_in.Text}', '{textBox_password_in.Text}', '{textBox_email_in.Text}')";
+                    cmd.CommandText = $"INSERT INTO \"user\"(login, password, email) values ('{textBox_ligin_in.Text}', '{textBox_password_in.Text}', '{textBox_email_in.Text}')";
                     reader = cmd.ExecuteReader();
 
 
@@ -416,14 +415,35 @@ namespace Shop.project
             {
                 conn.Close();
             }
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 6;
+            NpgsqlConnection conn = GetConnection();
+            NpgsqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = $"SELECT COUNT(fk_characteristic_id) FROM \"user\" WHERE \"id\" = {user.id}";
+
+            try
+            {
+                conn.Open();
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    if (dr.GetInt32(0) == 0)
+                    {
+                        MessageBox.Show("Сначала настройте рекомендации!\n(Настройка рекомендации)");
+                    } else
+                    {
+                        tabControl1.SelectedIndex = 6;
+                    }
+                }
+            } catch(NpgsqlException ex) {
+                MessageBox.Show("Ошибка!\n" + ex);
+            }
+            finally { conn.Close(); }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -883,19 +903,15 @@ namespace Shop.project
 
         private void button_save_rec_Click(object sender, EventArgs e)
         {
+            if (textBox_photo_link.Text == string.Empty || textBox_name_clothe.Text == string.Empty || textBox_discription.Text == string.Empty)
+            {
+                MessageBox.Show("Заполните пустые поля!");
+                return;
+            }
             webBrowser1.Url = new Uri(textBox_photo_link.Text);
             webBrowser1.Document.Body.Style = "zoom:50%";
             label_prev_name.Text = textBox_name_clothe.Text;
             label_prev_where_buy.Text = textBox_discription.Text;
-
-            //var request = WebRequest.Create(textBox_photo_link.Text.ToString() + ".jpeg");
-            ////var request = WebRequest.Create(@"http://google.com/test.png");
-
-            //using (var response = request.GetResponse())
-            //using (var stream = response.GetResponseStream())
-            //{
-            //    pictureBox1.Image = Bitmap.FromStream(stream);
-            //}
 
             tabControl1.SelectedIndex = 11;
         }
@@ -917,52 +933,68 @@ namespace Shop.project
 
         private void button_revoke_Click(object sender, EventArgs e)
         {
-
+            add_color = add_material = add_season = add_sex = add_style = null;
+            textBox_name_clothe.Text = string.Empty;
+            textBox_photo_link.Text = string.Empty;
+            textBox_discription.Text = string.Empty;
         }
 
         private void comboBox_characteristic_SelectedValueChanged(object sender, EventArgs e)
         {
-            comboBox_characteristic2.Items.Clear();
+            panel_add.Visible = true;
             switch (comboBox_characteristic.SelectedItem.ToString())
             {
                 case "Стиль":
                     {
-                        PushToComboBox(ref comboBox_characteristic2, style);
-                        comboBox_characteristic2.SelectedIndex = 0;
+                        radioButton_add1.Text = "Класический";
+                        radioButton_add2.Text = "Спортивный";
+                        radioButton_add3.Text = "Домашний";
+                        radioButton_add4.Text = "Рабочий";
+                        radioButton_add5.Text = "Специальнынй";
+                        radioButton_add6.Visible = false;
                         break;
                     }
                 case "Пол":
                     {
-                        PushToComboBox(ref comboBox_characteristic2, sex);
-                        comboBox_characteristic2.SelectedIndex = 0;
+                        radioButton_add1.Text = "Мужской";
+                        radioButton_add2.Text = "Женский";
+                        radioButton_add3.Text = "Унисекс";
+                        radioButton_add4.Visible = false;
+                        radioButton_add5.Visible = false;
+                        radioButton_add6.Visible = false;
                         break;
                     }
                 case "Сезон":
                     {
-                        PushToComboBox(ref comboBox_characteristic2, season);
-                        comboBox_characteristic2.SelectedIndex = 0;
+                        radioButton_add1.Text = "Зима";
+                        radioButton_add2.Text = "Осень/Весна";
+                        radioButton_add3.Text = "Лето";
+                        radioButton_add4.Text = "Демисезон";
+                        radioButton_add5.Visible = false;
+                        radioButton_add6.Visible = false;
                         break;
                     }
                 case "Материал":
                     {
-                        PushToComboBox(ref comboBox_characteristic2, material);
-                        comboBox_characteristic2.SelectedIndex = 0;
+                        radioButton_add1.Text = "Хлопок";
+                        radioButton_add2.Text = "Синтетика";
+                        radioButton_add3.Text = "Кожа";
+                        radioButton_add4.Text = "Мех";
+                        radioButton_add5.Visible = false;
+                        radioButton_add6.Visible = false;
                         break;
                     }
                 case "Цвет":
                     {
-                        PushToComboBox(ref comboBox_characteristic2, color);
-                        comboBox_characteristic2.SelectedIndex = 0;
+                        radioButton_add1.Text = "Белый";
+                        radioButton_add2.Text = "Черный";
+                        radioButton_add3.Text = "Красный";
+                        radioButton_add4.Text = "Синий";
+                        radioButton_add5.Text = "Зеленый";
+                        radioButton_add6.Text = "Желтый";
                         break;
                     }
                 default: { break; }
-            }
-        }
-
-        private void PushToComboBox(ref ComboBox cb, List<string> list)
-        {
-            foreach (var str in list) {
-                cb.Items.Add(str);
             }
         }
 
@@ -1039,6 +1071,13 @@ namespace Shop.project
                     pictureBox_set_del_color.Visible = true;
                 }
             }
+
+            radioButton1.Visible = true;
+            radioButton2.Visible = true;
+            radioButton3.Visible = true;
+            radioButton4.Visible = true;
+            radioButton5.Visible = true;
+            radioButton6.Visible = true;
         }
 
         private void pictureBox_set_del_style_Click(object sender, EventArgs e)
@@ -1113,6 +1152,52 @@ namespace Shop.project
             pictureBox_set_del_material.Visible = false;
         }
 
+        private void button_prev_send_offer_Click(object sender, EventArgs e)
+        {
+            int ch_style = style.IndexOf(add_style) + 1;
+            int ch_sex = sex.IndexOf(add_sex) + 1;
+            int ch_season = season.IndexOf(add_season) + 1;
+            int ch_material = material.IndexOf(add_material) + 1;
+            int ch_color = color.IndexOf(add_color) + 1;
+
+            NpgsqlConnection conn = GetConnection();
+            NpgsqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = $"INSERT INTO characteristic(fk_using_id, fk_sex_id, fk_season_id, fk_material_id, fk_color_id) VALUES({ch_style}, {ch_sex}, {ch_season}, {ch_material}, {ch_color})";
+
+            try
+            {
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = $"SELECT * FROM characteristic ORDER BY id DESC";
+
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                int char_id = dr.GetInt32(0);
+                dr.Close();
+
+                cmd.CommandText = $"INSERT INTO clothe(description, \"like\", \"name\", url, fk_characteristic_id) VALUES('{textBox_discription.Text}', 0, '{textBox_name_clothe.Text}', '{textBox_photo_link.Text}', {char_id})";
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Одежда успешно добавлена!");
+
+                add_color = add_material = add_season = add_sex = add_style = textBox_discription.Text = textBox_name_clothe.Text = textBox_photo_link.Text = string.Empty;
+
+                label_prev_name.Text = label_prev_where_buy.Text = string.Empty;
+                webBrowser1.Url = null;
+
+                tabControl1.SelectedIndex = 8;
+
+            } catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Ошибка!\n" + ex);
+            }
+            finally { conn.Close(); }
+        }
+
         private void pictureBox_set_del_color_Click(object sender, EventArgs e)
         {
             label_set_cur_color.Text = string.Empty;
@@ -1131,10 +1216,7 @@ namespace Shop.project
             NpgsqlConnection conn = GetConnection();
             NpgsqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = $"UPDATE characteristic SET fk_style_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color}" +
-                $"WHERE characteristic.id = user.fk_characteristic_id";
-
-            cmd.CommandText = $"SELECT EXISTS(SELECT fk_characteristic_id FROM user WHERE id = {user.id})";
+            cmd.CommandText = $"SELECT COUNT(fk_characteristic_id) FROM \"user\" WHERE \"id\" = {user.id}";
 
             try
             {
@@ -1144,17 +1226,29 @@ namespace Shop.project
 
                 if (dr.Read())
                 {
-                    string check = dr.GetString(0);
-
-                    if (check.Equals("true"))
+                    if (dr.GetInt32(0) != 0)
                     {
-                        cmd.CommandText = $"UPDATE characteristic SET fk_style_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color}" +
-                        $"WHERE characteristic.id = user.fk_characteristic_id";
+                        dr.Close();
+                        cmd.CommandText = $"SELECT fk_characteristic_id FROM \"user\"";
+
+                        dr = cmd.ExecuteReader();
+                        dr.Read();
+                        int fk_char_id = dr.GetInt32(0);
+                        dr.Close();
+                        cmd.CommandText = $"UPDATE characteristic SET fk_using_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color} WHERE characteristic.id = {fk_char_id}";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Рекомендации успешно обновлены!");
                     } else
                     {
-                        cmd.CommandText = $"INSERT INTO characteristic(fk_style_id, fk_sex_id, fk_season_id, fk_material_id, fk_color_id VALUES({ch_style}, {ch_sex}, {ch_season}, {ch_material}, {ch_color}))";
+                        dr.Close();
+                        cmd.CommandText = $"INSERT INTO characteristic(fk_using_id, fk_sex_id, fk_season_id, fk_material_id, fk_color_id) VALUES({ch_style}, {ch_sex}, {ch_season}, {ch_material}, {ch_color})";
+                        cmd.ExecuteNonQuery();
+                        cmd.CommandText = $"SELECT * FROM characteristic ORDER BY \"id\" DESC";
+                        dr = cmd.ExecuteReader();
+                        dr.Read();
+                        int fk_char_id = dr.GetInt32(0);
+                        dr.Close();
+                        cmd.CommandText = $"UPDATE \"user\" SET fk_characteristic_id = {fk_char_id}";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Рекомендации успешно обновлены!");
                     }
@@ -1162,12 +1256,75 @@ namespace Shop.project
             } catch(NpgsqlException ex)
             {
                 MessageBox.Show("Ошибка!\n" + ex);
-            } finally { conn.Close(); }
+            }
+            finally { conn.Close(); }
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             webBrowser1.Document.Body.Style = "zoom:20%";
+        }
+
+        private void button_add_save_Click(object sender, EventArgs e)
+        {
+            string str = string.Empty;
+            if (radioButton_add1.Checked)
+            {
+                str = radioButton_add1.Text;
+            }
+            else if (radioButton_add2.Checked)
+            {
+                str = radioButton_add2.Text;
+            }
+            else if (radioButton_add3.Checked)
+            {
+                str = radioButton_add3.Text;
+            }
+            else if (radioButton_add4.Checked)
+            {
+                str = radioButton_add4.Text;
+            }
+            else if (radioButton_add5.Checked)
+            {
+                str = radioButton_add5.Text;
+            }
+            else if (radioButton_add6.Checked)
+            {
+                str = radioButton_add6.Text;
+            }
+
+            if (str != string.Empty)
+            {
+                panel_add.Visible = false;
+
+                if (style.Contains(str))
+                {
+                    add_style = str;
+                }
+                else if (sex.Contains(str))
+                {
+                    add_sex = str;
+                }
+                else if (season.Contains(str))
+                {
+                    add_season = str;
+                }
+                else if (material.Contains(str))
+                {
+                    add_material = str;
+                }
+                else if (color.Contains(str))
+                {
+                    add_color = str;
+                }
+            }
+
+            radioButton_add1.Visible = true;
+            radioButton_add2.Visible = true;
+            radioButton_add3.Visible = true;
+            radioButton_add4.Visible = true;
+            radioButton_add5.Visible = true;
+            radioButton_add6.Visible = true;
         }
     }
    
