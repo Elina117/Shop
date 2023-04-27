@@ -106,6 +106,7 @@ namespace Shop.project
             else
             {
                 SendCode_Mail(conn, cmd, textBox_email);
+                Program.Write($"\nINFO {DateTime.Now} Было отправлено электронное письмо на почту {textBox_email.Text}");
             }
 
         }
@@ -148,11 +149,13 @@ namespace Shop.project
 
                             MessageBox.Show("Код успешно отправлен на почту, указанную Вами в личном кабинете!\n(Возможно код лежит в папке \"СПАМ\")\nВАЖНО: после того, как вы ввели код, если он правильный, то вы автоматиечски попадёте во вкладку восстановления пароля, никакие другие кнопки нажимать не нужно!");
                             tabControl1.SelectedIndex = 3;
+                            Program.Write($"\n[ERROR] {DateTime.Now} Резервный код отправлен на почту");
                         }
                     }
                     else
                     {
                         MessageBox.Show("Ошибка! Данный пользователь не существует!");
+                        Program.Write($"\nINFO {DateTime.Now} Пользователь {textBox_reserve_login.Text} не существует при попытке отправить резервный код");
                     }
 
 
@@ -161,6 +164,7 @@ namespace Shop.project
                 catch (NpgsqlException ex)
                 {
                     MessageBox.Show("Ошибка подключения к серверу, попробуйте ещё раз!\n" + ex.Message);
+                    Program.Write($"\n[ERROR] {DateTime.Now} Ошибка подключения к серверу");
                 }
                 finally
                 {
@@ -204,7 +208,9 @@ namespace Shop.project
             catch (SmtpException)
             {
                 MessageBox.Show("Ошибка отправки сообщения, попробуйте ещё раз!");
+                Program.Write($"\n[INFO] {DateTime.Now} Ошибка отправки сообщения на почту");
             }
+        
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -217,7 +223,9 @@ namespace Shop.project
             else
             {
                 MessageBox.Show("Введеный код не совпадает с отправленным!");
+                Program.Write($"\n[INFO] {DateTime.Now} введеный код {textBox_enter_reserve_code.Text} не совпадает с отправленным");
             }
+        
         }
 
         private void button_enter_Click(object sender, EventArgs e)
@@ -260,12 +268,16 @@ namespace Shop.project
                         pr.Value = 0;
 
                         tabControl1.SelectedIndex = 5;
+
+                        Program.Write($"\nINFO {DateTime.Now} Пользователь {textBox_login.Text} зашел в личный кабинет");
                     }
                     else
                     {
                         textBox_login.BackColor = Color.Red;
                         textBox_password.BackColor = Color.Red;
                         MessageBox.Show("Неправильный логин или пароль!");
+
+                        Program.Write($"\n[INFO] {DateTime.Now} Пользовательно {textBox_login.Text} неверно ввел логин или пароль");
                     }
                     dr.Close();
                 }
@@ -359,6 +371,8 @@ namespace Shop.project
                 textBox_password_in.BackColor = Color.Red;
 
                 MessageBox.Show("Поля не заполнены, попробуйте ввести данные");
+                Program.Write($"\n[INFO] {DateTime.Now} Поля не заполнены");
+
                 return;
             }
 
@@ -381,6 +395,7 @@ namespace Shop.project
                     if (reader.Read() && reader.GetBoolean(0) == true)
                     {
                         MessageBox.Show("Данная почта уже занята!");
+                        Program.Write($"\n[INFO] {DateTime.Now} Данная почта {textBox_email_in.Text} уже занята");
                         return;
                     }
                     reader.Close();
@@ -391,6 +406,7 @@ namespace Shop.project
                     if (reader.Read() && reader.GetBoolean(0) == true)
                     {
                         MessageBox.Show("Логин уже занят!");
+                        Program.Write($"\n[INFO] {DateTime.Now} Данный логин {textBox_ligin_in.Text} уже занят");
                         return;
                     }
                     reader.Close();
@@ -402,6 +418,7 @@ namespace Shop.project
 
 
                     MessageBox.Show($"Форма заполнена верно");
+                    Program.Write($"\n[INFO] {DateTime.Now} Форма заполнена верно, новый пользователь зарегистрирован");
 
                     tabControl1.SelectedIndex = 0;
 
@@ -435,6 +452,7 @@ namespace Shop.project
                     if (dr.GetInt32(0) == 0)
                     {
                         MessageBox.Show("Сначала настройте рекомендации!\n(Настройка рекомендации)");
+                        Program.Write($"\n[INFO] {DateTime.Now} Необходимо заполнить сначала рекомендации");
                     } else
                     {
                         tabControl1.SelectedIndex = 6;
@@ -696,6 +714,7 @@ namespace Shop.project
                     PersonalSpace();
 
                     MessageBox.Show("Вы успешно обновили пароль!");
+                    Program.Write($"\n[INFO] {DateTime.Now} Данный пользователь {textBox_reserve_login.Text} обновил пароль на {new_password.Text}");
                     tabControl1.SelectedIndex = 0;
 
                 }
@@ -724,6 +743,7 @@ namespace Shop.project
             textBox_lc_email.Enabled = true;
             textBox_lc_birthday.Enabled = true;
             MessageBox.Show("Вы в режиме редактирования\nПосле изменения данных кликните по кнопке 'Сохранить' для сохранения изменений");
+            Program.Write($"\n[INFO] {DateTime.Now} Пользователь {user.login} в режиме редактирования");
             label_end_of_changing.Visible = true;
             label33.Visible = false;
 
@@ -796,6 +816,7 @@ namespace Shop.project
                         textBox_lc_birthday.Enabled = false;
 
                         MessageBox.Show("Данные обновлены!");
+                        Program.Write($"\n[INFO] {DateTime.Now} Пользователь {user.login} обновил данные");
                         label33.Visible = true;
 
                     }
@@ -862,6 +883,7 @@ namespace Shop.project
             if (dresult == DialogResult.Yes)
             {
                 tabControl1.SelectedIndex = 0;
+                Program.Write($"\n[INFO] {DateTime.Now} Пользователь {user.login} вышел из личного кабинета");
             }
         }
 
@@ -1187,6 +1209,7 @@ namespace Shop.project
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Одежда успешно добавлена!");
+                Program.Write($"\n[INFO] {DateTime.Now} Одежда добавлена пользователем {user.login}");
 
                 add_color = add_material = add_season = add_sex = add_style = textBox_discription.Text = textBox_name_clothe.Text = textBox_photo_link.Text = string.Empty;
 
@@ -1242,6 +1265,8 @@ namespace Shop.project
                         cmd.CommandText = $"UPDATE characteristic SET fk_using_id = {ch_style}, fk_sex_id = {ch_sex}, fk_season_id = {ch_season}, fk_material_id = {ch_material}, fk_color_id = {ch_color} WHERE characteristic.id = {fk_char_id}";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Рекомендации успешно обновлены!");
+                        Program.Write($"\n[INFO] {DateTime.Now} Добавлены рекомендации");
+
                     } else
                     {
                         dr.Close();
@@ -1255,6 +1280,7 @@ namespace Shop.project
                         cmd.CommandText = $"UPDATE \"user\" SET fk_characteristic_id = {fk_char_id}";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Рекомендации успешно обновлены!");
+                        Program.Write($"\n[INFO] {DateTime.Now} Рекомендации обновлены");
                     }
                 }
             } catch(NpgsqlException ex)
